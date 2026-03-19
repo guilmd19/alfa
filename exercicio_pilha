@@ -399,4 +399,4 @@ Stack pilha = Stack();
 **Comentário:**
 A forma moderna utiliza **Generics**, garantindo **tipagem segura**, como `Stack<Integer>`.
 
----
+
