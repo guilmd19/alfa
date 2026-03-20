@@ -17,19 +17,24 @@ em uma só haste.
      Só se pode mover um disco se ele estiver no topo de uma haste.
 
 4. Qual é o objetivo principal do algoritmo da Torre de Hanói?  
- R = Treinar a lógica de programação 
+ R = Transferir todos os discos para uma só haste, do maior para o menor, no mínimo de jogadas possível.
 
 5. Qual é a fórmula que calcula o número mínimo de movimentos necessários para resolver o problema com `n` discos?  
- R = Para 'n' discos, a fórmula é 
+ R = Para 'n' discos, a fórmula é 2n - 1
 
 6. Quantos movimentos são necessários para resolver o problema com 3 discos?  
  R = São necessários 7 movimentos, visto que, substituindo na fórmula, teremos 2³ - 1 = 7
 
 7. Qual o tempo de complexidade do algoritmo da Torre de Hanói?  
- R = É uma complexidade exponencial, sendo escrita O(2­
+ R = É uma complexidade exponencial, sendo escrita O(2n).­
                                                      
 8. Por que o problema da Torre de Hanói é considerado um exemplo clássico de **recursão**?  
-9. O que significa “caso base” em um algoritmo recursivo, e qual é o caso base na Torre de Hanói?  
+ R = Porque apresenta funções chamando a si mesmas para resolver o problema final.
+
+9. O que significa “caso base” em um algoritmo recursivo, e qual é o caso base na Torre de Hanói?
+ R = O caso base é uma condição que encerra a recursão, para que a função pare de chamar a si mesma, na torre de hanói, o caso base
+é o comando return.
+
 10. O que acontece com o número de movimentos totais quando se adiciona mais um disco ao problema?
  R = Eles aumentam, porque o expoente da fórmula é alterado para mais, o que aumenta o resultado.
 
@@ -38,7 +43,11 @@ em uma só haste.
 ## 💻 Parte 2 – Código Java
 
 11. Qual é o papel dos parâmetros `origem`, `destino` e `auxiliar` no método `moverDiscos()`?  
+ R = Especificar a haste de onde o disco sairá, por onde passará e onde terminará
+
 12. O que acontece se o caso base `if (n == 1)` for removido do código?  
+ R = 
+
 13. No trecho abaixo, o que significa a linha `moverDiscos(n - 1, origem, auxiliar, destino);`?
 
     ```java
@@ -46,6 +55,8 @@ em uma só haste.
     System.out.println("Mover disco " + n + " de " + origem + " para " + destino);
     moverDiscos(n - 1, auxiliar, destino, origem);
     ```
+
+ R = É a linha da função que move o disco da haste de origem até a haste de destino.
 
 14. Por que o algoritmo chama o próprio método dentro dele (recursão)?  
 15. O que a função `System.out.println()` exibe em cada iteração da função recursiva?  
