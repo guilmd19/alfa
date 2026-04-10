@@ -37,8 +37,8 @@ public class Main {
                 }
 
         }
-        // Dealer pedirá cartas se tiver com 15 ou menos e a pontuação menor que o jogador
-        while (totalDealer < 16 && totalJogador <= 21) {
+        // Dealer pedirá cartas se tiver com 16 ou menos e a pontuação menor que o jogador
+        while (totalDealer < 17 && totalJogador <= 21) {
             if (totalDealer > totalJogador) {
                 break;
             } else {
