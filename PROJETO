@@ -1,0 +1,64 @@
+import java.util.Random;
+import java.util.Scanner;
+
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        // Ambos jogador e dealer começam com uma carta
+        int totalJogador = (random.nextInt(10) + 2);
+        int totalDealer = (random.nextInt(10) + 2);
+
+        while (true) {
+            System.out.println("Seu total: " + totalJogador);
+
+            // Se o jogador passar de 21, o while é encerrado e ele perde o jogo
+            if (totalJogador > 21) {
+                System.out.println("Você perdeu, passou de 21!");
+                break;
+            }
+
+            System.out.print("Comprar (c) ou Parar (p)? ");
+            String acao = scanner.next();
+
+            // O sistema gera uma carta a cada "c" escrito no terminal
+            if (acao.equalsIgnoreCase("c")){
+                totalJogador += (random.nextInt(10) + 2);
+            }
+            // Em caso de "p", o jogador para com a pontuação que está
+            else if (acao.equalsIgnoreCase("p")){
+                break;
+            }
+                else
+                {
+                    System.out.println("Erro: entrada inválida.");
+                }
+
+        }
+        // Dealer pedirá cartas se tiver com 15 ou menos e a pontuação menor que o jogador
+        while (totalDealer < 16 && totalJogador <= 21) {
+            if (totalDealer > totalJogador) {
+                break;
+            } else {
+                totalDealer += (random.nextInt(10) + 2);
+            }
+        }
+        System.out.println("\nResultado Final:");
+        System.out.println("Você: " + totalJogador + " | Dealer: " + totalDealer);
+
+        // If que determinará todos os resultados possíveis
+        if (totalJogador > 21) {
+            System.out.println("Você perdeu!");
+        } else if (totalDealer > 21 || totalJogador > totalDealer) {
+            System.out.println("Você ganhou!");
+        } else if (totalJogador < totalDealer) {
+            System.out.println("Dealer ganhou!");
+        } else {
+            System.out.println("Empate!");
+        }
+
+        scanner.close();
+    }
+}
